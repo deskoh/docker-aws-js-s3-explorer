@@ -2,7 +2,7 @@
 
 Docker image for [AWS JavaScript S3 Explorer](https://github.com/awslabs/aws-js-s3-explorer/tree/v2-alpha) based on [RedHat ubi-minimal](https://developers.redhat.com/products/rhel/ubi/) with selected NGINX CIS Benchmarks.
 
-> Note: `index.html` is modified to remove dependencies to 3rd-party resources (`.js`, `.css`) hosted externally. These resource are hosted locally instead. Web clients only need to access AWS S3 Endpoints.
+> Note: `index.html` is modified to remove dependencies to 3rd-party resources (`.js`, `.css`) hosted externally. These resource are hosted locally instead.
 
 ## Quickstart
 

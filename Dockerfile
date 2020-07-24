@@ -39,8 +39,8 @@ RUN chmod -R ug-x,o-rwx /etc/nginx/nginx.conf
 WORKDIR /usr/share/nginx/html/
 
 ADD index.html .
+ADD explorer.js .
 
-ADD --chown=nginx https://raw.githubusercontent.com/awslabs/aws-js-s3-explorer/v2-alpha/explorer.js .
 ADD --chown=nginx https://raw.githubusercontent.com/awslabs/aws-js-s3-explorer/v2-alpha/explorer.css .
 
 # Add external resources

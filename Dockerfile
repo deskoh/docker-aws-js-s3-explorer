@@ -38,9 +38,33 @@ RUN chmod -R ug-x,o-rwx /etc/nginx/nginx.conf
 
 WORKDIR /usr/share/nginx/html/
 
-ADD --chown=nginx https://raw.githubusercontent.com/awslabs/aws-js-s3-explorer/v2-alpha/index.html .
+ADD index.html .
+
 ADD --chown=nginx https://raw.githubusercontent.com/awslabs/aws-js-s3-explorer/v2-alpha/explorer.js .
 ADD --chown=nginx https://raw.githubusercontent.com/awslabs/aws-js-s3-explorer/v2-alpha/explorer.css .
+
+# Add external resources
+ADD --chown=nginx https://aws.amazon.com/favicon.ico .
+
+# JS / CSS
+ADD --chown=nginx https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css ./css/
+ADD --chown=nginx https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js ./js/
+ADD --chown=nginx https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js ./js/
+ADD --chown=nginx https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js ./js/
+ADD --chown=nginx https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js ./js/
+ADD --chown=nginx https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js ./js/
+ADD --chown=nginx https://code.jquery.com/jquery-3.4.1.min.js ./js/
+ADD --chown=nginx https://sdk.amazonaws.com/js/aws-sdk-2.437.0.min.js ./js/
+ADD --chown=nginx https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap-theme.min.css ./css/
+ADD --chown=nginx https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css ./css/
+ADD --chown=nginx https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js ./js/
+ADD --chown=nginx https://use.fontawesome.com/releases/v5.6.3/css/all.css ./css/
+
+# Fonts
+ADD --chown=nginx https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/fonts/glyphicons-halflings-regular.woff2 ./fonts/
+ADD --chown=nginx https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.woff2 ./webfonts/
+ADD --chown=nginx https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.woff ./webfonts/
+ADD --chown=nginx https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.ttf ./webfonts/
 
 USER nginx
 

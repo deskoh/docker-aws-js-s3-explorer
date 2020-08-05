@@ -39,7 +39,7 @@ RUN chmod -R ug-x,o-rwx /etc/nginx/nginx.conf
 WORKDIR /usr/share/nginx/html/
 
 ADD --chown=nginx index.html .
-ADD --chown=nginx explorer.js .
+# ADD --chown=nginx explorer.js .
 
 ADD --chown=nginx https://raw.githubusercontent.com/awslabs/aws-js-s3-explorer/v2-alpha/explorer.css .
 
@@ -65,6 +65,8 @@ ADD --chown=nginx https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/fonts/glyph
 ADD --chown=nginx https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.woff2 ./webfonts/
 ADD --chown=nginx https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.woff ./webfonts/
 ADD --chown=nginx https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.ttf ./webfonts/
+
+ADD --chown=nginx explorer.js .
 
 USER nginx
 

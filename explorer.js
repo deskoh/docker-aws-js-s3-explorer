@@ -975,12 +975,21 @@ function UploadController($scope, SharedService) {
               `<div class="progress"><span id="upload-td-progress-${ii}" class="progress-bar" data-percent="0">0%</span></div>`,
           );
 
-          const s3 = new AWS.S3(AWS.config);
+          // const s3 = new AWS.S3(AWS.config);
+          const s3 = new AWS.S3({
+              ...AWS.config,
+              accessKeyId: 'AKIAXXXXXXXXXXXXXXXXX',
+              secretAccessKey: 'dummy',
+          });
           // const params = {
           //     Body: file.file, Bucket, Key: (prefix || '') + (file.file.fullPath ? file.file.fullPath : file.file.name), ContentType: file.file.type,
           // };
           const params = {
-            Body: file.file, Bucket, Endpoint: `${PROXY_ENDPOINT}/${Bucket}`, Key: (prefix || '') + (file.file.fullPath ? file.file.fullPath : file.file.name), ContentType: file.file.type,
+            Body: file.file,
+            Bucket,
+            Endpoint: `${PROXY_ENDPOINT}/${Bucket}`,
+            Key: (prefix || '') + (file.file.fullPath ? file.file.fullPath : file.file.name),
+            ContentType: file.file.type,
           }
 
           const upl = s3.upload(params);
@@ -1276,7 +1285,13 @@ function TrashController($scope, SharedService) {
           DEBUG.log('Object:', objects[ii]);
           DEBUG.log('Index:', ii);
 
-          const s3 = new AWS.S3(AWS.config);
+          
+          // const s3 = new AWS.S3(AWS.config);
+          const s3 = new AWS.S3({
+              ...AWS.config,
+              accessKeyId: 'AKIAXXXXXXXXXXXXXXXXX',
+              secretAccessKey: 'dummy',
+          });
 
           // If the user is deleting a folder then recursively list
           // objects and delete them

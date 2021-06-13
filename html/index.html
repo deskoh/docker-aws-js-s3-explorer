@@ -49,7 +49,7 @@ permissions and limitations under the License.
                             <div class="col-md-18">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
-                                        <p><b>Bucket</b>: Please indicate which region and S3 bucket you want to explore.</p>
+                                        <!-- <p><b>Bucket</b>: Please indicate which region and S3 bucket you want to explore.</p>
                                         <div class="input-group bottom-marg-10">
                                             <span class="input-group-addon">Region</span>
                                             <select name="region" class="form-control" ng-model="settings.region">
@@ -71,7 +71,7 @@ permissions and limitations under the License.
                                                 <option value="us-west-1">US West (N. California)</option>
                                                 <option value="us-west-2">US West (Oregon)</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                         <div class="input-group bottom-marg-10" ng-show="settings.buckets.length">
                                             <span class="input-group-addon">Bucket</span>
                                             <select name="bucketlist" class="form-control" ng-model="settings.selected_bucket" placeholder="bucket" ng-required="buckets.length">
@@ -79,6 +79,10 @@ permissions and limitations under the License.
                                                 <option ng-repeat="bucket in settings.buckets" value="{{bucket}}">{{bucket}}</option>
                                                 <option value="">Other ...</option>
                                             </select>
+                                        </div>
+                                        <div class="input-group bottom-marg-10">
+                                            <span class="input-group-addon">Endpoint</span>
+                                            <input name="bucket" ng-model="settings.endpoint" type="text" class="form-control" placeholder="endpoint" required/>
                                         </div>
                                         <div class="input-group bottom-marg-10" ng-hide="settings.buckets.length && settings.selected_bucket!=''">
                                             <span class="input-group-addon">Bucket</span>

@@ -1,4 +1,4 @@
-# Docker Image for AWS JavaScript S3 Explorer
+# Docker Image for AWS JavaScript S3 Explorer (for custom endpoints)
 
 Docker image for [AWS JavaScript S3 Explorer](https://github.com/awslabs/aws-js-s3-explorer/tree/v2-alpha) based on [RedHat ubi-minimal](https://developers.redhat.com/products/rhel/ubi/) with selected NGINX CIS Benchmarks.
 
@@ -35,11 +35,7 @@ CORS for Writable S3 Bucket
     <AllowedHeader>*</AllowedHeader>
     <MaxAgeSeconds>3000</MaxAgeSeconds>
     <ExposeHeader>ETag</ExposeHeader>
-    <ExposeHeader>x-amz-meta-custom-header</ExposeHeader>
-    <ExposeHeader>x-amz-server-side-encryption</ExposeHeader>
     <ExposeHeader>x-amz-request-id</ExposeHeader>
-    <ExposeHeader>x-amz-id-2</ExposeHeader>
-    <ExposeHeader>date</ExposeHeader>
   </CORSRule>
 </CORSConfiguration>
 ```
@@ -56,11 +52,7 @@ CORS for Read-Only S3 Bucket
     <AllowedHeader>*</AllowedHeader>
     <MaxAgeSeconds>3000</MaxAgeSeconds>
     <ExposeHeader>ETag</ExposeHeader>
-    <ExposeHeader>x-amz-meta-custom-header</ExposeHeader>
-    <ExposeHeader>x-amz-server-side-encryption</ExposeHeader>
     <ExposeHeader>x-amz-request-id</ExposeHeader>
-    <ExposeHeader>x-amz-id-2</ExposeHeader>
-    <ExposeHeader>date</ExposeHeader>
   </CORSRule>
 </CORSConfiguration>
 ```
